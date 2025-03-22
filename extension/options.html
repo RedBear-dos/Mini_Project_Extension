@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Shield - Tùy chọn</title>
+    <link rel="stylesheet" href="css/options.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="icons/icon48.png" alt="JS Shield Logo">
+                <h1>JS Shield - Tùy chọn</h1>
+            </div>
+        </header>
+
+        <main>
+            <div class="options-container">
+                <section class="option-section">
+                    <h2>Cài đặt bảo vệ</h2>
+                    
+                    <div class="option-item">
+                        <div class="option-info">
+                            <h3>Bảo vệ chủ động</h3>
+                            <p>Tự động quét và phát hiện mã độc JavaScript trên các trang web</p>
+                        </div>
+                        <div class="option-control">
+                            <label class="switch">
+                                <input type="checkbox" id="active-protection" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="option-item">
+                        <div class="option-info">
+                            <h3>Bảo vệ AI</h3>
+                            <p>Sử dụng trí tuệ nhân tạo để phát hiện mã độc JavaScript tiên tiến</p>
+                        </div>
+                        <div class="option-control">
+                            <label class="switch">
+                                <input type="checkbox" id="ai-protection" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="option-item">
+                        <div class="option-info">
+                            <h3>Mức độ bảo vệ</h3>
+                            <p>Điều chỉnh mức độ bảo vệ và độ nhạy của phát hiện</p>
+                        </div>
+                        <div class="option-control">
+                            <select id="protection-level">
+                                <option value="low">Thấp</option>
+                                <option value="medium" selected>Trung bình</option>
+                                <option value="high">Cao</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="option-section">
+                    <h2>Thông báo</h2>
+                    
+                    <div class="option-item">
+                        <div class="option-info">
+                            <h3>Thông báo khi phát hiện mối đe dọa</h3>
+                            <p>Hiển thị thông báo khi phát hiện mã độc JavaScript</p>
+                        </div>
+                        <div class="option-control">
+                            <label class="switch">
+                                <input type="checkbox" id="threat-notifications" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="option-item">
+                        <div class="option-info">
+                            <h3>Thông báo tóm tắt hàng tuần</h3>
+                            <p>Nhận thông báo tóm tắt về các mối đe dọa đã phát hiện trong tuần</p>
+                        </div>
+                        <div class="option-control">
+                            <label class="switch">
+                                <input type="checkbox" id="weekly-summary">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="option-section">
+                    <h2>Danh sách trắng</h2>
+                    
+                    <div class="option-item full-width">
+                        <div class="option-info">
+                            <h3>Trang web được tin cậy</h3>
+                            <p>Các trang web trong danh sách này sẽ không được quét</p>
+                        </div>
+                    </div>
+
+                    <div class="whitelist-container">
+                        <div class="whitelist-input">
+                            <input type="text" id="whitelist-url" placeholder="Nhập tên miền (ví dụ: example.com)">
+                            <button id="add-to-whitelist" class="btn primary">Thêm</button>
+                        </div>
+                        
+                        <div class="whitelist-list">
+                            <ul id="whitelist-items">
+                                <!-- Whitelist items will be added here dynamically -->
+                            </ul>
+                            <div id="no-whitelist-message" class="no-items-message">
+                                Không có trang web nào trong danh sách trắng.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="option-section">
+                    <h2>Dữ liệu và quyền riêng tư</h2>
+                    
+                    <div class="option-item">
+                        <div class="option-info">
+                            <h3>Chia sẻ dữ liệu phát hiện ẩn danh</h3>
+                            <p>Giúp cải thiện hệ thống phát hiện bằng cách chia sẻ dữ liệu ẩn danh về các mối đe dọa</p>
+                        </div>
+                        <div class="option-control">
+                            <label class="switch">
+                                <input type="checkbox" id="share-anonymous-data" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="option-item">
+                        <div class="option-info">
+                            <h3>Xóa tất cả dữ liệu</h3>
+                            <p>Xóa tất cả dữ liệu đã lưu trữ, bao gồm lịch sử phát hiện và thống kê</p>
+                        </div>
+                        <div class="option-control">
+                            <button id="clear-data" class="btn danger">Xóa dữ liệu</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <div class="actions">
+                <button id="save-options" class="btn primary">Lưu thay đổi</button>
+                <button id="reset-options" class="btn secondary">Khôi phục mặc định</button>
+            </div>
+            <div class="version-info">
+                JS Shield v1.0.0 - Phát hiện mã độc JavaScript với AI
+            </div>
+        </footer>
+    </div>
+
+    <div id="confirmation-dialog" class="dialog">
+        <div class="dialog-content">
+            <h3>Xác nhận</h3>
+            <p id="dialog-message">Bạn có chắc chắn muốn thực hiện hành động này?</p>
+            <div class="dialog-actions">
+                <button id="dialog-cancel" class="btn secondary">Hủy</button>
+                <button id="dialog-confirm" class="btn primary">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/options.js"></script>
+</body>
+</html>

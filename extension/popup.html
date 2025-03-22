@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Shield</title>
+    <link rel="stylesheet" href="css/popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="icons/icon48.png" alt="JS Shield Logo">
+                <h1>JS Shield</h1>
+            </div>
+            <div class="status">
+                <div id="protection-status" class="status-indicator active">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Đang bảo vệ</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-value" id="scripts-scanned">0</div>
+                    <div class="stat-label">Scripts đã quét</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="threats-detected">0</div>
+                    <div class="stat-label">Mối đe dọa phát hiện</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="sites-protected">0</div>
+                    <div class="stat-label">Trang web đã bảo vệ</div>
+                </div>
+            </div>
+
+            <div class="current-site">
+                <h2>Trang web hiện tại</h2>
+                <div class="site-info">
+                    <div class="site-url" id="current-url">Đang tải...</div>
+                    <div class="site-status" id="site-status">
+                        <span class="status-icon safe"></span>
+                        <span class="status-text">An toàn</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="threats-list" id="threats-container">
+                <h2>Mối đe dọa gần đây</h2>
+                <div class="no-threats" id="no-threats-message">
+                    Không có mối đe dọa nào được phát hiện gần đây.
+                </div>
+                <ul id="threats-list">
+                    <!-- Threats will be added here dynamically -->
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <div class="actions">
+                <button id="scan-page" class="btn primary">Quét trang này</button>
+                <button id="view-details" class="btn secondary">Xem chi tiết</button>
+                <button id="open-options" class="btn secondary">Tùy chọn</button>
+            </div>
+            <div class="ai-status">
+                <span class="ai-icon"></span>
+                <span class="ai-text">AI Protection: <span id="ai-status-text">Đang hoạt động</span></span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/popup.js"></script>
+</body>
+</html>

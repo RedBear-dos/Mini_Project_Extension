@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết mối đe dọa - JS Shield</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .threat-list {
+            list-style: none;
+            padding: 0;
+        }
+        .threat-item {
+            background-color: #f9f9f9;
+            border-left: 4px solid #e74c3c;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        .threat-item.medium {
+            border-left-color: #f39c12;
+        }
+        .threat-item.low {
+            border-left-color: #3498db;
+        }
+        .threat-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .threat-type {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .threat-severity {
+            padding: 3px 8px;
+            border-radius: 4px;
+            background-color: #e74c3c;
+            color: white;
+            font-size: 14px;
+        }
+        .threat-severity.medium {
+            background-color: #f39c12;
+        }
+        .threat-severity.low {
+            background-color: #3498db;
+        }
+        .threat-details {
+            margin-top: 10px;
+        }
+        .threat-details p {
+            margin: 5px 0;
+        }
+        .evidence {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: monospace;
+            margin-top: 10px;
+        }
+        .no-threats {
+            text-align: center;
+            padding: 30px;
+            color: #7f8c8d;
+        }
+        .back-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chi tiết mối đe dọa</h1>
+        <div id="threatContainer">
+            <!-- Nội dung sẽ được thêm bằng JavaScript -->
+            <div class="no-threats">
+                <p>Không có mối đe dọa nào được phát hiện.</p>
+                <p>Trang web hiện tại an toàn.</p>
+            </div>
+        </div>
+        <button class="back-button" id="backButton">Quay lại</button>
+    </div>
+
+    <script src="js/details.js"></script>
+</body>
+</html>
